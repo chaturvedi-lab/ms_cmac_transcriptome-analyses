@@ -1,3 +1,11 @@
+"""
+author: samridhi chaturvedi
+samridhi.chaturvedi@gmail.com
+data: March 2020
+This script takes as an input genome annotation file in gff format and a transcript count matrix and combines gene IDs of the transcripts as an additional column.
+
+"""
+
 #!/usr/bin/python3
 import re
 import argparse
