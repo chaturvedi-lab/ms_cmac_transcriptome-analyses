@@ -285,7 +285,7 @@ The results of this are:
 
 These look fine for downstream analyses.
 
-**5. featureCount **
+**6. featureCount **
 
 I used the output from STAR to create the final count matrix using the program featureCount. 
 
@@ -314,4 +314,4 @@ done
 
 The output from this script are two files per sample: one with extension ".featurecounts" and one with extension ".summary".
 
-I created the final matrix of counts by combining the data from each sample output file (".featurecounts") by using the R script *prepare_countmatrix.R*. I then annotated these transcripts with gene IDs using the python script *transcript_annot.py*. Both these scripts are in the repository.
+I created the final matrix of counts by combining the data from each sample output file (".featurecounts") by using the R script *prepare_countmatrix.R*. I then annotated these transcripts with gene IDs using the python script *transcript_annot.py*. Both these scripts are in the repository. I used the annotated count matrix for differential expression analyses as described in the "differential_expression_analyses" file in the repository.
