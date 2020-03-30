@@ -1,14 +1,15 @@
+#load libraries
 library(edgeR)
 library(limma)
 library(Glimma)
 library(gplots)
-#library(org.Mm.eg.db)
 library(RColorBrewer)
 
 #read in the file with all the counts
-seqdata<-read.table("allsamples_featurecounts_annot.txt", header=T)
 seqdata<-matrix(scan("allsamples_featurecounts_annot.txt",n=49512*30,sep="\t"),nrow=49512,ncol=30,byrow=TRUE)
+#look at the output
 head(seqdata)
+
 #read in the sample ids to get treatments and lines
 samples<-read.table("sampleids.txt", header=T)
 group<-interaction(samples$line, samples$host)
@@ -28,6 +29,7 @@ head(countdata)
 newids<-interaction(samples$sample, samples$line, samples$host)
 colnames(countdata)<-newids
 head(countdata)
+
 ##filtering to remove lowly expressed genes using edgeR
 #obtain CPMs
 myCPM<-cpm(countdata)
@@ -155,7 +157,7 @@ colnames(highly_variable_lcpm)
 #get gene ids for top 50 degs
 top50degid<-seqdata[which(rownames(highly_variable_lcpm) %in% seqdata$Geneid),][,30]
 
-## Get some nicer colours
+## Get some nicer colors
 mypalette <- brewer.pal(11,"RdYlBu")
 morecols <- colorRampPalette(mypalette)
 # Set up colour vector for celltype variable
