@@ -268,24 +268,7 @@ module load samtools
 samtools flagstat Aligned.sortedByCoord.out.bam 
 ```
 
-The results of this are:
-64079449 + 0 in total (QC-passed reads + QC-failed reads)
-26409432 + 0 secondary
-0 + 0 supplementary
-0 + 0 duplicates
-64079449 + 0 mapped (100.00% : N/A)
-37670017 + 0 paired in sequencing
-18835451 + 0 read1
-18834566 + 0 read2
-37668530 + 0 properly paired (100.00% : N/A)
-37668530 + 0 with itself and mate mapped
-1487 + 0 singletons (0.00% : N/A)
-0 + 0 with mate mapped to a different chr
-0 + 0 with mate mapped to a different chr (mapQ>=5)
-
-These look fine for downstream analyses.
-
-**6. featureCount **
+**6. featureCount**
 
 I used the output from STAR to create the final count matrix using the program featureCount. 
 
