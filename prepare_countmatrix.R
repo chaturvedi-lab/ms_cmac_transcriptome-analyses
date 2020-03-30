@@ -1,3 +1,10 @@
+"""
+author: samridhi chaturvedi
+samridhi.chaturvedi@gmail.com
+data: March 2020
+This script takes featurecount output files for each sample and combine the counts data of each sample into one count matrix.
+"""
+
 #read in all the files
 samplefiles<-list.files(path=".", pattern = "Aligned.featureCounts$", all.files=T)
 
